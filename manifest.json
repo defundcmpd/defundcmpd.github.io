@@ -1,0 +1,10 @@
+{
+  "short_name": "Defund CMPD",
+  "name": "Defund CMPD",
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

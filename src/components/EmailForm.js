@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-export default function EmailForm({title, subtitle, strongSubtitle, help, global, optional, placeholder, linkText, body}){
+export default function EmailForm({title, subtitle, strongSubtitle, help, global, optional, placeholder, linkText, bodies}){
   const [cityCouncilMember, setCityCouncilMember] = useState('');
   const [mailLink, setMailLink] = useState('');
 
   useEffect(() => {
-    const link = getEmailList(global, cityCouncilMember, getBodyString(body));
+    const link = getEmailList(global, cityCouncilMember, getBodyString(bodies[Math.floor(Math.random() * bodies.length)]));
     setMailLink(`mailto:${link}`);
-  }, [cityCouncilMember, global, optional, body])
+  }, [cityCouncilMember, global, optional, bodies])
 
   return (
     <div className='email-card'>
@@ -27,7 +27,7 @@ export default function EmailForm({title, subtitle, strongSubtitle, help, global
         placeholder={placeholder}
       />
       <span className='email-link'>
-        <a className='email-link' href={mailLink} body={body}>{linkText}</a>
+        <a className='email-link' href={mailLink} >{linkText}</a>
       </span>
     </div>
   )
